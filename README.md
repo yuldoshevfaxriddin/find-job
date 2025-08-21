@@ -6,7 +6,11 @@ git clone https://github.com/yuldoshevfaxriddin/find-job.git
 ``` 
 pip install -r requirements.txt
 ```
-Birinchi serverni ishga tushiramiz
+``` 
+copy .env-example .env
+```
+.env fayl yaratib uning ichiga TELEGRAM_TOKEN, API_BASE_URL larni kiritib keting
+serverni ishga tushiramiz
 ``` 
 cd rest-api 
 ```
@@ -17,10 +21,8 @@ keyin botni ishga tushiramiz
 ``` 
 python bot.py 
 ```
-``` 
-copy .env-example .env
-```
-<p>.env fayl yaratib uning ichiga TELEGRAM_TOKEN, API_BASE_URL larni kiritib keting</p>
+
+
 
 
 
