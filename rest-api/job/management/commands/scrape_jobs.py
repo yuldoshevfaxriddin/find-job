@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from jobs.models import Job  # modelni import qilasan
+from job.models import Job  # modelni import qilasan
 import requests
 import bs4
 
@@ -30,7 +30,7 @@ class Command(BaseCommand):
         print("Scraping ishga tushdi...")
         urinishlar = 0
         for i in range(1, offset_page , 50):
-            url = f"https://remoteok.com/?&action=get_jobs&offset={i}"
+            url = f"https://remoteok.com/?&action=get_job&offset={i}"
             response = session.get(url,headers=headers)
             html_text = ''
             if response.status_code != 200:
@@ -47,7 +47,6 @@ class Command(BaseCommand):
             print("Malumotlar muvaffaqiyatli olindi! Kuting...")
             soup = bs4.BeautifulSoup(html_text, "html.parser")
             jobs = soup.find_all("tr", class_="job")    
-            # del session
             del soup
             for job in jobs:
                 job_data_offset = job['data-offset']

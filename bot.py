@@ -37,7 +37,7 @@ async def inline_query(update: Update, context: ContextTypes.DEFAULT_TYPE):
             title=job['name'],
             thumbnail_url=job['company_image'],
             description=f"{job['company_sity']} - {job['company_salary']}",
-            input_message_content=InputTextMessageContent(f"{job['company_salary']}\n<b>{job['company_sity']}</b>"+f"\n{job['link']}",parse_mode='HTML'),
+            input_message_content=InputTextMessageContent(f"<b>{job['name']}</b>\n{job['company_salary']}\n<b>{job['company_sity']}</b>"+f"\n{job['link']}",parse_mode='HTML'),
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("Saytga kirish", url=job['link'])]
                 ]
